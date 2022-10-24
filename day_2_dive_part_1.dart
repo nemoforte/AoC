@@ -1,9 +1,9 @@
-// dart day_2_dive.dart
+// dart day_2_dive_part_1.dart
 
 import 'dart:io';
 
 Future<void> main() async {
-  final File file = File('inputs/input2.txt');
+  final File file = File('inputs/day_2.txt');
   final String contents = await file.readAsString();
   List<String> inputlist = contents.split('\n');
   int horizontal = 0;

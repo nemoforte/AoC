@@ -1,4 +1,4 @@
-// dart day_1_sonar_sweep.dart
+// dart day_1_sonar_sweep_part_1.dart
 
 import 'dart:io';
 

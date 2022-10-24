@@ -3,7 +3,7 @@
 import 'dart:io';
 
 Future<void> main() async {
-  final File file = File('inputs/input3.txt');
+  final File file = File('inputs/day_3.txt');
   final String contents = await file.readAsString();
   List<String> inputlist = contents.split('\n');
   List<String> o2 = inputlist;
