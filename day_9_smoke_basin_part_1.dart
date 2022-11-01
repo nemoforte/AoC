@@ -2,32 +2,41 @@
 
 import 'dart:io';
 
+// read txt
 Future<void> main() async {
   final File file = File('inputs/day_9.txt');
   final String contents = await file.readAsString();
   List<String> inputlist = contents.split('\n');
-  int c = 0;
   StringBuffer lowpoints = StringBuffer();
 
-  for (int j = 1; j < inputlist.length - 1; j++) {
-    c = 0;
-    for (int i = 1; i < inputlist[0].length - 1; i++) {
-      if (int.parse(inputlist[j][i]) < int.parse(inputlist[j][i-1])) {
-        c++;
-      }
-      // if (int.parse(inputlist[j][i]) < int.parse(inputlist[j-1][i])) {
-      //   c++;
-      // }
-      // if (int.parse(inputlist[j][i]) < int.parse(inputlist[j][i+1])) {
-      //   c++;
-      // }
-      // if (int.parse(inputlist[j][i]) < int.parse(inputlist[j+1][i])) {
-      //   c++;
-      // }
-      if (c == 4) {
-        lowpoints.write(inputlist[i][j]);
+  // generate aux array
+  List<List<int>> array = List<List<int>>.generate(
+      inputlist.length + 2,
+      (int j) =>
+          List<int>.generate(inputlist[0].trim().length + 2, (int i) => 10));
+  for (int j = 1; j < array.length - 1; j++) {
+    for (int i = 1; i < array[0].length - 1; i++) {
+      array[j][i] = int.parse(inputlist[j - 1][i - 1]);
+    }
+  }
+
+  // count lowpoints
+  for (int j = 1; j < inputlist.length + 1; j++) {
+    for (int i = 1; i < inputlist[0].length; i++) {
+      if (array[j][i] < array[j][i + 1] &&
+          array[j][i] < array[j][i - 1] &&
+          array[j][i] < array[j - 1][i] &&
+          array[j][i] < array[j + 1][i]) {
+        lowpoints.write(array[j][i].toString());
       }
     }
   }
-  print(lowpoints);
+
+  // sum risk levels
+  int risklevels = 0;
+  for (int i = 0; i < lowpoints.toString().length; i++) {
+    risklevels += int.parse(lowpoints.toString()[i]) + 1;
+  }
+  print(risklevels);
+  
 }
