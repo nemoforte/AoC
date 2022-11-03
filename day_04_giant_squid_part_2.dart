@@ -1,9 +1,9 @@
-//      dart day_4_giant_squid_part_2.dart
+//      dart day_04_giant_squid_part_2.dart
 
 import 'dart:io';
 
 Future<void> main() async {
-  final File file = File('inputs/day_4.txt');
+  final File file = File('inputs/day_04.txt');
   final String contents = await file.readAsString();
   List<String> inputlist = contents.split(',');
   int c1 = 0;

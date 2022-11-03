@@ -1,10 +1,10 @@
-// dart day_5_hydrothermal_venture_part_1.dart
+// dart day_05_hydrothermal_venture_part_1.dart
 
 import 'dart:io';
 
 //read txt
 Future<void> main() async {
-  final File file = File('inputs/day_5.txt');
+  final File file = File('inputs/day_05.txt');
   final String contents = await file.readAsString();
   List<String> inputlist = contents.split(RegExp(' -> |,|\n'));
 

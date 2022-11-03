@@ -1,10 +1,10 @@
-// dart day_6_lanternfish_part_1.dart
+// dart day_06_lanternfish_part_1.dart
 
 import 'dart:io';
 
 // read txt
 Future<void> main() async {
-  final File file = File('inputs/day_6.txt');
+  final File file = File('inputs/day_06.txt');
   final String contents = await file.readAsString();
   List<String> inputlist = contents.split(',');
   List<int> intlist = List<int>.generate(inputlist.length, (int i) => 0);

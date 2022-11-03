@@ -1,10 +1,10 @@
-// dart day_8_seven_segment_search_part_1.dart
+// dart day_08_seven_segment_search_part_1.dart
 
 import 'dart:io';
 
 // read txt
 Future<void> main() async {
-  final File file = File('inputs/day_8.txt');
+  final File file = File('inputs/day_08.txt');
   final String contents = await file.readAsString();
   List<String> inputlist = contents.split(RegExp(' |\n'));
 

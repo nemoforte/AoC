@@ -1,9 +1,9 @@
-// dart day_3_binary_diagnostic_part_1.dart
+// dart day_03_binary_diagnostic_part_1.dart
 
 import 'dart:io';
 
 Future<void> main() async {
-  final File file = File('inputs/day_3.txt');
+  final File file = File('inputs/day_03.txt');
   final String contents = await file.readAsString();
   List<String> inputlist = contents.split('\n');
   StringBuffer gamma = StringBuffer();

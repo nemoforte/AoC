@@ -1,9 +1,9 @@
-// dart day_1_sonar_sweep_part_1.dart
+// dart day_01_sonar_sweep_part_1.dart
 
 import 'dart:io';
 
 Future<void> main() async {
-  final File file = File('inputs/day_1.txt');
+  final File file = File('inputs/day_01.txt');
   final String contents = await file.readAsString();
   int c = 0;
   List<String> inputlist = contents.split('\n');

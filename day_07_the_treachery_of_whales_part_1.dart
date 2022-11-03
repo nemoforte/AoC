@@ -1,10 +1,10 @@
-// dart day_7_the_treachery_of_whales_part_2.dart
+// dart day_07_the_treachery_of_whales_part_1.dart
 
 import 'dart:io';
 
 // read txt
 Future<void> main() async {
-  final File file = File('inputs/day_7.txt');
+  final File file = File('inputs/day_07.txt');
   final String contents = await file.readAsString();
   List<String> inputlist = contents.split(',');
 
@@ -32,15 +32,10 @@ Future<void> main() async {
   // Map
   List<int> fuelmap = List<int>.generate(max - min, (int i) => 0);
   int fuel = 0;
-  int c = 0;
   for (int j = 0; j < max - min; j++) {
     fuel = 0;
     for (int i = 0; i < intlist.length; i++) {
-      for (int k = 1; k <= (intlist[i] - j).abs(); k++) {
-        c += k;
-      }
-      fuel += c;
-      c = 0;
+      fuel += (intlist[i] - j).abs();
     }
     fuelmap[j] = fuel;
   }
@@ -54,4 +49,5 @@ Future<void> main() async {
   }
 
   print(minfuel);
+  
 }

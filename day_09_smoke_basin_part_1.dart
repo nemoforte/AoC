@@ -1,10 +1,10 @@
-// dart day_9_smoke_basin_part_1.dart
+// dart day_09_smoke_basin_part_1.dart
 
 import 'dart:io';
 
 // read txt
 Future<void> main() async {
-  final File file = File('inputs/day_9.txt');
+  final File file = File('inputs/day_09.txt');
   final String contents = await file.readAsString();
   List<String> inputlist = contents.split('\n');
   StringBuffer lowpoints = StringBuffer();
