@@ -36,26 +36,7 @@ Future<void> main() async {
           array[j][i] < array[j - 1][i] &&
           array[j][i] < array[j + 1][i]) {
         // print(array[j][i]);
-        if (array[j][i] < array[j][i + 1] && array[j][i + 1] != 9) {
-          basin.addAll(<int>[j, i + 1]);
-          c++;
-          // print(array[j][i + 1]);
-        }
-        if (array[j][i] < array[j][i - 1] && array[j][i - 1] != 9) {
-          basin.addAll(<int>[j, i - 1]);
-          c++;
-          // print(array[j][i - 1]);
-        }
-        if (array[j][i] < array[j - 1][i] && array[j - 1][i] != 9) {
-          basin.addAll(<int>[j - 1, i]);
-          c++;
-          // print(array[j - 1][i]);
-        }
-        if (array[j][i] < array[j + 1][i] && array[j + 1][i] != 9) {
-          basin.addAll(<int>[j + 1, i]);
-          c++;
-          // print(array[j + 1][i]);
-        }
+        basin.addAll(<int>[j, i]);
         for (int q = 0; q < basin.length - 1; q += 2) {
           y = basin[q];
           x = basin[q + 1];
