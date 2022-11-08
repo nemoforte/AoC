@@ -6,23 +6,23 @@ import 'dart:io';
 Future<void> main() async {
   final File file = File('inputs/day_05.txt');
   final String contents = await file.readAsString();
-  List<String> inputlist = contents.split(RegExp(' -> |,|\n'));
+  List<String> inputList = contents.split(RegExp(' -> |,|\n'));
 
-  // // show inputlist
-  // for (int i = 0; i < inputlist.length; i++) {
-  //   print(inputlist[i]);
+  // // show inputList
+  // for (int i = 0; i < inputList.length; i++) {
+  //   print(inputList[i]);
   // }
 
   // create and fill cords array
   List<List<int>> cords = List<List<int>>.generate(
-      inputlist.length ~/ 4, (int i) => List<int>.generate(4, (int j) => 0));
+      inputList.length ~/ 4, (int i) => List<int>.generate(4, (int j) => 0));
   int c = 0;
-  int tablesize = 0;
-  for (int i = 0; i < (inputlist.length ~/ 4); i++) {
+  int tableSize = 0;
+  for (int i = 0; i < (inputList.length ~/ 4); i++) {
     for (int j = 0; j < 4; j++) {
-      cords[i][j] = int.parse(inputlist[c]);
-      if (int.parse(inputlist[c]) > tablesize) {
-        tablesize = int.parse(inputlist[c]);
+      cords[i][j] = int.parse(inputList[c]);
+      if (int.parse(inputList[c]) > tableSize) {
+        tableSize = int.parse(inputList[c]);
       }
       c++;
     }
@@ -30,22 +30,22 @@ Future<void> main() async {
 
   // // show variables
   // print(c);
-  // print(inputlist.length);
-  // print(tablesize);
+  // print(inputList.length);
+  // print(tableSize);
 
   // generate table of vents
-  List<List<int>> vents = List<List<int>>.generate(tablesize + 1,
-      (int i) => List<int>.generate(tablesize + 1, (int j) => 0));
+  List<List<int>> vents = List<List<int>>.generate(tableSize + 1,
+      (int i) => List<int>.generate(tableSize + 1, (int j) => 0));
 
   // // show cords array
-  // for (int i = 0; i < inputlist.length ~/ 4; i++) {
+  // for (int i = 0; i < inputList.length ~/ 4; i++) {
   //   print(cords[i]);
   // }
 
   // draw diagonal lines
   int x = 0;
   int y = 0;
-  for (int i = 0; i < inputlist.length ~/ 4; i++) {
+  for (int i = 0; i < inputList.length ~/ 4; i++) {
     if ((cords[i][0] - cords[i][2]).abs() ==
         (cords[i][1] - cords[i][3]).abs()) {
       // if |x1 - x2| = |y1 - y2|
@@ -90,7 +90,7 @@ Future<void> main() async {
   }
 
 // draw horizontal and vertical lines
-  for (int i = 0; i < inputlist.length ~/ 4; i++) {
+  for (int i = 0; i < inputList.length ~/ 4; i++) {
     if (cords[i][0] == cords[i][2]) {
       // if x1 = x2
       if (cords[i][1] > cords[i][3]) {
@@ -121,8 +121,8 @@ Future<void> main() async {
 
   // calculate result
   c = 0;
-  for (int x = 0; x < tablesize; x++) {
-    for (int y = 0; y < tablesize; y++) {
+  for (int x = 0; x < tableSize; x++) {
+    for (int y = 0; y < tableSize; y++) {
       if (vents[y][x] >= 2) {
         c++;
       }
@@ -130,7 +130,7 @@ Future<void> main() async {
   }
 
   // // print vents array
-  // for (int i = 0; i <= tablesize; i++) {
+  // for (int i = 0; i <= tableSize; i++) {
   //   print(vents[i]);
   // }
 

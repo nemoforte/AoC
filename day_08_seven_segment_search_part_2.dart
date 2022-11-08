@@ -6,27 +6,27 @@ import 'dart:io';
 Future<void> main() async {
   final File file = File('inputs/day_08.txt');
   final String contents = await file.readAsString();
-  List<String> inputlist = contents.split(RegExp(' |\n'));
+  List<String> inputList = contents.split(RegExp(' |\n'));
 
   // build array
-  List<List<String>> input = List<List<String>>.generate(inputlist.length ~/ 15,
+  List<List<String>> input = List<List<String>>.generate(inputList.length ~/ 15,
       (int i) => List<String>.generate(14, (int j) => ''));
   int k = 0;
-  for (int j = 0; j < inputlist.length ~/ 15; j++) {
+  for (int j = 0; j < inputList.length ~/ 15; j++) {
     for (int i = 0; i < 14; i++) {
-      if (inputlist[k] != '|') {
-        input[j][i] = inputlist[k];
+      if (inputList[k] != '|') {
+        input[j][i] = inputList[k];
         k++;
       } else {
         k++;
-        input[j][i] = inputlist[k];
+        input[j][i] = inputList[k];
         k++;
       }
     }
   }
 
   // trim
-  for (int j = 0; j < inputlist.length ~/ 15; j++) {
+  for (int j = 0; j < inputList.length ~/ 15; j++) {
     input[j][13] = input[j][13].trim();
   }
 
@@ -44,7 +44,7 @@ Future<void> main() async {
 
   // finding 1, 4, 7, 8
   int sum = 0;
-  for (int j = 0; j < inputlist.length ~/ 15; j++) {
+  for (int j = 0; j < inputList.length ~/ 15; j++) {
     for (int i = 0; i < 10; i++) {
       if (input[j][i].length == 2) {
         one = input[j][i];

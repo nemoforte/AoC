@@ -6,17 +6,17 @@ import 'dart:io';
 Future<void> main() async {
   final File file = File('inputs/day_10.txt');
   final String contents = await file.readAsString();
-  List<String> inputlist = contents.split('\n');
-  for (int j = 0; j < inputlist.length; j++) {
-    inputlist[j] = inputlist[j].trim();
+  List<String> inputList = contents.split('\n');
+  for (int j = 0; j < inputList.length; j++) {
+    inputList[j] = inputList[j].trim();
   }
 
   // input list to array 2d cause idk how to operate on Strings
   List<List<String>> array =
-      List<List<String>>.generate(inputlist.length, (int j) => <String>[]);
-  for (int j = 0; j < inputlist.length; j++) {
-    for (int i = 0; i < inputlist[j].length; i++) {
-      array[j].add(inputlist[j][i]);
+      List<List<String>>.generate(inputList.length, (int j) => <String>[]);
+  for (int j = 0; j < inputList.length; j++) {
+    for (int i = 0; i < inputList[j].length; i++) {
+      array[j].add(inputList[j][i]);
     }
   }
 

@@ -6,10 +6,10 @@ Future<void> main() async {
   final File file = File('inputs/day_01.txt');
   final String contents = await file.readAsString();
   int c = 0;
-  List<String> inputlist = contents.split('\n');
+  List<String> inputList = contents.split('\n');
 
-  for (int i = 0; i < inputlist.length - 1; i++) {
-    if (int.parse(inputlist[i + 1]) > int.parse(inputlist[i])) {
+  for (int i = 0; i < inputList.length - 1; i++) {
+    if (int.parse(inputList[i + 1]) > int.parse(inputList[i])) {
       c++;
     }
   }

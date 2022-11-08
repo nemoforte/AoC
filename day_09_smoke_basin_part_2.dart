@@ -6,16 +6,16 @@ import 'dart:io';
 Future<void> main() async {
   final File file = File('inputs/day_09.txt');
   final String contents = await file.readAsString();
-  List<String> inputlist = contents.split('\n');
+  List<String> inputList = contents.split('\n');
   
   // generate aux array
   List<List<int>> array = List<List<int>>.generate(
-      inputlist.length + 4,
+      inputList.length + 4,
       (int j) =>
-          List<int>.generate(inputlist[0].trim().length + 4, (int i) => 9));
+          List<int>.generate(inputList[0].trim().length + 4, (int i) => 9));
   for (int j = 2; j < array.length - 2; j++) {
     for (int i = 2; i < array[0].length - 2; i++) {
-      array[j][i] = int.parse(inputlist[j - 2][i - 2]);
+      array[j][i] = int.parse(inputList[j - 2][i - 2]);
     }
   }
 
@@ -27,8 +27,8 @@ Future<void> main() async {
   int c = 0;
   int min = 0;
   bool repeat = false;
-  for (int j = 2; j < inputlist.length + 2; j++) {
-    for (int i = 2; i < inputlist[0].length + 1; i++) {
+  for (int j = 2; j < inputList.length + 2; j++) {
+    for (int i = 2; i < inputList[0].length + 1; i++) {
       basin = <int>[];
       c = 1;
       if (array[j][i] < array[j][i + 1] &&

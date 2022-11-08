@@ -5,13 +5,13 @@ import 'dart:io';
 Future<void> main() async {
   final File file = File('inputs/day_03.txt');
   final String contents = await file.readAsString();
-  List<String> inputlist = contents.split('\n');
-  List<String> o2 = inputlist;
-  List<String> co2 = inputlist;
+  List<String> inputList = contents.split('\n');
+  List<String> o2 = inputList;
+  List<String> co2 = inputList;
   List<String> temp = <String>[];
   String lookup;
 
-  for (int j = 0; j < inputlist[0].length - 1; j++) {
+  for (int j = 0; j < inputList[0].length - 1; j++) {
     int c = 0;
     if (o2.length > 1) {
       for (int i = 0; i < o2.length; i++) {
@@ -34,7 +34,7 @@ Future<void> main() async {
     }
   }
 
-  for (int j = 0; j < inputlist[0].length - 1; j++) {
+  for (int j = 0; j < inputList[0].length - 1; j++) {
     int c = 0;
     if (co2.length > 1) {
       for (int i = 0; i < co2.length; i++) {

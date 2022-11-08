@@ -6,37 +6,37 @@ import 'dart:io';
 Future<void> main() async {
   final File file = File('inputs/day_06.txt');
   final String contents = await file.readAsString();
-  List<String> inputlist = contents.split(',');
-  List<int> intlist = List<int>.generate(inputlist.length, (int i) => 0);
+  List<String> inputList = contents.split(',');
+  List<int> intList = List<int>.generate(inputList.length, (int i) => 0);
 
   // // show input list
-  // for (int i = 0; i < inputlist.length; i++) {
-  //   print(inputlist[i]);
+  // for (int i = 0; i < inputList.length; i++) {
+  //   print(inputList[i]);
   // }
   
   // copy to list of int
-  for (int i = 0; i < inputlist.length; i++) {
-    intlist[i] = int.parse(inputlist[i]);
+  for (int i = 0; i < inputList.length; i++) {
+    intList[i] = int.parse(inputList[i]);
   }
 
   // population growth
   for (int j = 0; j < 80; j++) {
-    int l = intlist.length;
+    int l = intList.length;
     for (int i = 0; i < l; i++) {
-      if (intlist[i] > 0) {
-        intlist[i]--;
+      if (intList[i] > 0) {
+        intList[i]--;
       } else {
-        intlist[i] = 6;
-        intlist.add(8);
+        intList[i] = 6;
+        intList.add(8);
       }
     }
   }
 
   // // show int list
-  // for (int i = 0; i < intlist.length; i++) {
-  //   print(intlist[i]);
+  // for (int i = 0; i < intList.length; i++) {
+  //   print(intList[i]);
   // }
 
-  print(intlist.length);
+  print(intList.length);
 
 }
